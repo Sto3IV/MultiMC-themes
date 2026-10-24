@@ -1,2 +1,11 @@
-# MultiMC-themes
-The mt list of themes for MultiMC compatible launchers.
+# Nord
+Photo
+
+---
+
+# Catpuccin
+Photo
+
+---
+# Installation
+Guide
