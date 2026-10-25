@@ -7,27 +7,27 @@ A curated collection of minimalist, aesthetic, and high-contrast dark themes and
 
 ---
 
-## 🧭 Navigation
+## Navigation
 
-- [🎨 Gallery & Showcase](#-gallery--showcase)
+- [Gallery & Showcase](#-gallery--showcase)
   - [Nord](#nord)
   - [Rosé Pine](#rosé-pine)
   - [Kanagawa Wave](#kanagawa-wave)
   - [GitHub Dark High Contrast](#github-dark-high-contrast)
   - [Catppuccin Mocha](#catppuccin-mocha)
-- [✨ Icon Themes](#-icon-themes)
-- [📦 Quick & Simple Installation](#-quick--simple-installation)
+- [Icon Themes](#-icon-themes)
+- [Installation](#-quick--simple-installation)
   - [Step 1: Open your Prism Launcher root folder](#step-1-open-your-prism-launcher-root-folder)
   - [Step 2: Install `themes` and `iconthemes`](#step-2-install-themes-and-iconthemes)
     - [Option A: One-command install with Git (Terminal)](#option-a-one-command-install-with-git-terminal)
     - [Option B: Manual download without Git (ZIP)](#option-b-manual-download-without-git-zip)
   - [Step 3: Activate your theme & icons in the launcher](#step-3-activate-your-theme--icons-in-the-launcher)
-- [⚙️ Technical Notes & Structure](#️-technical-notes--structure)
-- [📜 License & Credits](#-license--credits)
+- [Technical Notes & Structure](#️-technical-notes--structure)
+- [License & Credits](#-license--credits)
 
 ---
 
-## 🎨 Gallery & Showcase
+## Gallery & Showcase
 
 ### Nord
 > *An arctic, north-bluish clean palette engineered for calm endurance and eye comfort.*
@@ -74,7 +74,7 @@ A curated collection of minimalist, aesthetic, and high-contrast dark themes and
 
 ---
 
-## ✨ Icon Themes
+## Icon Themes
 
 This collection includes custom recolored scalable SVG icon packs specifically matching the color themes:
 
@@ -86,7 +86,7 @@ These icon packs live in the `iconthemes/` directory and replace the default lau
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### Step 1: Open your Prism Launcher root folder
 
@@ -199,7 +199,7 @@ MultiMC-themes/
 
 ---
 
-## 📜 License & Credits
+## License & Credits
 
 This repository is distributed under the [Apache License 2.0](LICENSE).  
 Individual color palettes, icon foundations, and aesthetic motifs belong to their respective creators and open-source communities:
