@@ -20,11 +20,12 @@ A curated collection of minimalist, aesthetic, and high-contrast dark themes met
   - [Kanagawa Wave](#kanagawa-wave)
   - [GitHub Dark High Contrast](#github-dark-high-contrast)
   - [Catppuccin Mocha](#catppuccin-mocha)
-- [📦 Installation Guide](#-installation-guide)
-  - [Method 1: Clone via Git](#method-1-clone-via-git)
-  - [Method 2: Manual Download (.zip)](#method-2-manual-download-zip)
-  - [Activating the Theme in Launcher](#activating-the-theme-in-launcher)
-  - [Platform Paths (Where is my `themes` folder?)](#platform-paths)
+- [📦 Quick & Simple Installation](#-quick--simple-installation)
+  - [Step 1: Open your `themes` folder](#step-1-open-your-themes-folder)
+  - [Step 2: Choose your install method](#step-2-choose-your-install-method)
+    - [Option A: One-command install with Git (Recommended)](#option-a-one-command-install-with-git-recommended)
+    - [Option B: Manual download without Git](#option-b-manual-download-without-git)
+  - [Step 3: Enable the theme in the launcher](#step-3-enable-the-theme-in-the-launcher)
 - [⚙️ Technical Notes & Structure](#️-technical-notes--structure)
 - [📜 License & Credits](#-license--credits)
 
@@ -77,74 +78,64 @@ A curated collection of minimalist, aesthetic, and high-contrast dark themes met
 
 ---
 
-## 📦 Installation Guide
+## 📦 Quick & Simple Installation
 
-You do **not** need any external installation scripts or separate documents. Everything is configured right here.
+No complex setup or technical know-how required. Follow these three easy steps:
 
-### Method 1: Clone via Git
+### Step 1: Open your `themes` folder
 
-If you use Git, open your terminal inside your launcher's data directory or clone directly:
+Open your launcher's `themes` folder using either way:
 
-```bash
-# Clone the repository
-git clone https://github.com/Sto3IV/MultiMC-themes.git
+- **Inside the Launcher:**
+  1. Open **Prism Launcher** (or **MultiMC**).
+  2. Click **Settings** ➔ **User Interface**.
+  3. Under the Theme section, click the **Folder icon** or open the launcher folder and go into `themes`.
+- **Or via File Explorer:**
+  - **Windows:** Press `Win + R`, paste `%APPDATA%\PrismLauncher\themes` and press `Enter` *(or open `themes` inside your portable launcher folder)*.
+  - **Linux (Flatpak / Steam Deck):** `~/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/themes/`
+  - **Linux (Standard):** `~/.local/share/PrismLauncher/themes/`
+  - **macOS:** `~/Library/Application Support/PrismLauncher/themes/`
 
-# Copy the themes directory contents into your launcher's themes folder
-# (Adjust the destination path according to your OS below)
-```
-
-### Method 2: Manual Download (.zip)
-
-1. Click the green **Code** button at the top of this repository, then select **Download ZIP** (or [Click Here](https://github.com/Sto3IV/MultiMC-themes/archive/refs/heads/main.zip)).
-2. Extract the downloaded archive.
-3. Inside the extracted folder, you will find a `themes/` directory containing:
-   - `catpuccin/`
-   - `github/`
-   - `kanagawa-wave/`
-   - `nord/`
-   - `rose-pine/`
-4. Copy either the entire `themes/` folder (to merge it) or individual theme folders directly into your launcher's `themes/` directory.
+*(If the `themes` folder does not exist yet, simply create a new folder named `themes`).*
 
 ---
 
-### Activating the Theme in Launcher
+### Step 2: Choose your install method
 
-1. Launch **Prism Launcher** or **MultiMC**.
-2. Navigate to **Settings** ➔ **User Interface**.
-3. Under the **Colors** or **Theme** dropdown:
-   - Select your desired theme (`Nord`, `Rosé Pine`, `Kanagawa Wave`, `GitHub Dark High Contrast`, or `Catppuccin Mocha`).
-4. Ensure the **Widget style** is set to **Fusion** for optimal appearance.
-5. Click **Close** — the stylesheet applies immediately (a launcher restart is recommended for complete icon caching).
+#### Option A: One-command install with Git (Recommended)
+
+If you have **Git** installed on your system:
+
+1. Inside your empty `themes` folder, right-click any blank space and click **Open in Terminal** *(available natively on Windows 11 and Linux)*.
+2. Paste and run this command:
+   ```bash
+   git clone https://github.com/Sto3IV/MultiMC-themes.git .
+   ```
+   *(Notice the space and dot `.` at the end — this ensures all themes are downloaded directly into your `themes` folder without creating an extra parent folder).*
+3. You're done! All themes are ready.  
+   *(Bonus: To update all themes in the future, just open a terminal here and run `git pull`).*
+
+#### Option B: Manual download without Git
+
+If you do **not** have Git installed:
+
+1. Download the repository archive: **[Download ZIP](https://github.com/Sto3IV/MultiMC-themes/archive/refs/heads/main.zip)** (or click the green **Code** button at the top of GitHub and select **Download ZIP**).
+2. Open or extract the downloaded zip file.
+3. Drag and drop the theme folders (`catpuccin`, `github`, `kanagawa-wave`, `nord`, `rose-pine`) straight into your launcher's `themes` folder.
 
 ---
 
-### Platform Paths
+### Step 3: Enable the theme in the launcher
 
-Locate your launcher's `themes` directory based on your operating system:
-
-#### 🪟 Windows
-- **Prism Launcher (Standard AppData):**  
-  `%APPDATA%\PrismLauncher\themes\`  
-  *(Press `Win + R`, paste the path, and hit `Enter`)*
-- **Portable / MultiMC / Root Installation:**  
-  `<Your_Launcher_Directory>\themes\`
-
-#### 🐧 Linux
-- **Flatpak (Standard on Steam Deck & Flathub):**  
-  `~/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/themes/`
-- **Native / Package Manager (AUR, DEB, RPM, AppImage):**  
-  `~/.local/share/PrismLauncher/themes/`  
-  *(For MultiMC: `~/.local/share/multimc/themes/`)*
-
-#### 🍎 macOS
-- **Prism Launcher:**  
-  `~/Library/Application Support/PrismLauncher/themes/`
-- **MultiMC:**  
-  `~/Library/Application Support/MultiMC/themes/`
-
-> [!TIP]
-> **Universal Shortcut inside the Launcher:**  
-> In Prism Launcher, you can go to **Settings** ➔ **User Interface** and click **Folder** (or open the launcher instance/data directory directly) to reveal the root where the `themes` directory lives.
+1. In **Prism Launcher** / **MultiMC**, go to **Settings** ➔ **User Interface**.
+2. Under the **Colors** or **Theme** dropdown, select your theme:
+   - `Nord`
+   - `Rosé Pine`
+   - `Kanagawa Wave`
+   - `GitHub Dark High Contrast`
+   - `Catppuccin Mocha`
+3. Make sure the **Widget style** is set to **Fusion**.
+4. Click **Close** — the theme applies instantly.
 
 ---
 
@@ -152,30 +143,29 @@ Locate your launcher's `themes` directory based on your operating system:
 
 ```
 MultiMC-themes/
-├── themes/
-│   ├── catpuccin/
-│   │   ├── theme.json
-│   │   ├── theme.json.license
-│   │   └── themeStyle.css
-│   ├── github/
-│   │   ├── theme.json
-│   │   ├── themeStyle.css
-│   │   └── resources/
-│   │       ├── check-partial.svg
-│   │       ├── check.svg
-│   │       └── radio-dot.svg
-│   ├── kanagawa-wave/
-│   │   ├── theme.json
-│   │   ├── themeStyle.css
-│   │   └── resources/ (*.svg)
-│   ├── nord/
-│   │   ├── theme.json
-│   │   ├── themeStyle.css
-│   │   └── resources/ (*.svg)
-│   └── rose-pine/
-│       ├── theme.json
-│       ├── themeStyle.css
-│       └── resources/ (*.svg)
+├── catpuccin/
+│   ├── theme.json
+│   ├── theme.json.license
+│   └── themeStyle.css
+├── github/
+│   ├── theme.json
+│   ├── themeStyle.css
+│   └── resources/
+│       ├── check-partial.svg
+│       ├── check.svg
+│       └── radio-dot.svg
+├── kanagawa-wave/
+│   ├── theme.json
+│   ├── themeStyle.css
+│   └── resources/ (*.svg)
+├── nord/
+│   ├── theme.json
+│   ├── themeStyle.css
+│   └── resources/ (*.svg)
+├── rose-pine/
+│   ├── theme.json
+│   ├── themeStyle.css
+│   └── resources/ (*.svg)
 ├── screenshots/
 │   ├── catpuccin.png
 │   ├── github.png
@@ -188,8 +178,8 @@ MultiMC-themes/
 
 > [!IMPORTANT]
 > **Preserving Folder Names (Relative URL Resolution):**  
-> Qt stylesheets (`themeStyle.css`) resolve vector resources (checkboxes, arrows, radio buttons) using the relative path `themes/<folder_name>/resources/...`.  
-> Do not rename the theme folders inside your `themes/` directory (`kanagawa-wave`, `nord`, `rose-pine`, `github`, `catpuccin`), otherwise the custom UI vector icons will fail to load.
+> Qt stylesheets (`themeStyle.css`) resolve custom vector assets (checkboxes, arrows, radio buttons) using the relative path `themes/<folder_name>/resources/...`.  
+> Do not rename individual theme folders (`kanagawa-wave`, `nord`, `rose-pine`, `github`, `catpuccin`), otherwise the custom UI vector icons will fail to load.
 
 ---
 
