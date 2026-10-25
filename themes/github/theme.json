@@ -1,0 +1,36 @@
+{
+    "colors": {
+        "AlternateBase": "#151b23",
+        "Base": "#010409",
+        "BrightText": "#ff9492",
+        "Button": "#262c36",
+        "ButtonText": "#ffffff",
+        "Highlight": "#504f4f",
+        "HighlightedText": "#ffffff",
+        "Link": "#b7bdc8",
+        "Text": "#ffffff",
+        "ToolTipBase": "#151b23",
+        "ToolTipText": "#ffffff",
+        "Window": "#010409",
+        "WindowText": "#ffffff",
+        "fadeAmount": 0.5,
+        "fadeColor": "#656c76"
+    },
+    "logColors": {
+        "Debug": "#656c76",
+        "DebugHighlight": "#010409",
+        "Error": "#ff9492",
+        "ErrorHighlight": "#010409",
+        "Fatal": "#ffffff",
+        "FatalHighlight": "#ad0116",
+        "Launcher": "#b7bdc8",
+        "LauncherHighlight": "#010409",
+        "Message": "#ffffff",
+        "MessageHighlight": "#010409",
+        "Warning": "#f0b72f",
+        "WarningHighlight": "#010409"
+    },
+    "name": "GitHub Dark High Contrast",
+    "qssFilePath": "themeStyle.css",
+    "widgets": "Fusion"
+}

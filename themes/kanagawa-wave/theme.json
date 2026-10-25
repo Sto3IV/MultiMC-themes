@@ -1,0 +1,31 @@
+{
+    "colors": {
+        "AlternateBase": "#252530",
+        "Base": "#1F1F28",
+        "BrightText": "#DCD7BA",
+        "Button": "#363646",
+        "ButtonText": "#DCD7BA",
+        "Highlight": "#2D4F67",
+        "HighlightedText": "#DCD7BA",
+        "Link": "#7E9CD8",
+        "Text": "#DCD7BA",
+        "ToolTipBase": "#16161D",
+        "ToolTipText": "#C8C093",
+        "Window": "#1F1F28",
+        "WindowText": "#DCD7BA",
+        "fadeAmount": 0.5,
+        "fadeColor": "#1F1F28"
+    },
+    "logColors": {
+        "Debug": "#98BB6C",
+        "Error": "#E82424",
+        "Fatal": "#1F1F28",
+        "FatalHighlight": "#E82424",
+        "Launcher": "#7E9CD8",
+        "Message": "#DCD7BA",
+        "Warning": "#FF9E3B"
+    },
+    "name": "Kanagawa Wave",
+    "qssFilePath": "themeStyle.css",
+    "widgets": "Fusion"
+}

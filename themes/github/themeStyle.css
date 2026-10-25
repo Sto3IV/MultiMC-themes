@@ -1,0 +1,508 @@
+/* ==========================================================================
+ *  GitHub Dark High Contrast  ->  Prism Launcher (Qt6 / Fusion)
+ *  Palette source: @primer/primitives 11.10.0, theme "dark_high_contrast"
+ *  Companion to 7-Zip dark theme - same pinned version,
+ *  same twelve surface colours, so the two applications match exactly.
+ *
+ *  The signature of this theme is near-white borders (#b7bdc8) on a
+ *  near-black canvas (#010409) - not simply dark mode with more saturation.
+ *
+ *  GEOMETRY - square, VS Code style (2026-10-24, at the user's request; the
+ *  rounded original is kept as "themeStyle rounded.css"). border-radius is
+ *  0 everywhere except QRadioButton::indicator, whose 7px on a 14px box is
+ *  the radio circle itself - a glyph, not a corner.
+ *
+ *  BORDER POLICY - "faithful":
+ *    #b7bdc8  near-white, 1px .. interactive controls + floating overlays
+ *    #3d444d  dim, 1px ........ containers, gridlines, separators
+ *    #b7bdc8  near-white, 1px .. the window frame, assembled from the
+ *                                widgets that own each window edge;
+ *                                see "window frame" below
+ *  Outlining every container as well would produce a near-white mesh that
+ *  GitHub does not render. Same call as the gridlines note in 7zDark.ini.
+ *
+ *  PALETTE
+ *    #010409  bgColor-default ......... canvas: windows, views, text areas
+ *    #151b23  bgColor-muted ........... chrome: toolbars, headers, menus
+ *    #212830  bgColor-neutral-muted ... row / menu hover
+ *    #262c36  control-bgColor-rest .... buttons, inputs
+ *    #2a313c  control-bgColor-hover
+ *    #2f3742  control-bgColor-active
+ *    #3d444d  bgColor-neutral-emphasis  dim borders, gridlines, scrollbars
+ *    #ffffff  fgColor-default ......... primary text        20.4:1
+ *    #b7bdc8  fgColor-muted / borderColor-default           10.6:1
+ *    #656c76  fgColor-disabled ........ disabled text        3.9:1
+ *    #f0f6fc  control-borderColor-selected .. hovered edge
+ *
+ *  ACCENT - USER OVERRIDE, NOT A PRIMER TOKEN:
+ *    #504f4f  replaces focus-outlineColor #409eff at the user's request.
+ *             Do NOT "correct" this back to a Primer accent when
+ *             reconciling against upstream - the departure is deliberate.
+ *
+ *             It is used ONLY AS A FILL: selection, checked indicators,
+ *             menu selection, progress chunk. White on it is 8.2:1;
+ *             near-black on it is 2.5:1, so everything sitting on the
+ *             accent is white.
+ *
+ *             It must NEVER be used as an EDGE. At luminance 0.079 it is
+ *             darker than the #b7bdc8 idle border (0.506): a focus ring in
+ *             it reads 1.7:1 against the #262c36 control fill and would
+ *             make a focused control look DIMMER than an idle one. Every
+ *             accent edge - focus rings, the selected-tab underline, the
+ *             slider fill - is #ffffff instead, at 14:1.
+ *
+ *  WHY THIS FILE IS LONG: Fusion derives its own frame colours from the
+ *  Window role - outline() is Window.darker(140). On a #010409 window that
+ *  collapses to black, so every container edge and every checkbox would be
+ *  invisible if left native. Borders here are mandatory, not decorative.
+ *
+ *  QT PITFALLS respected below:
+ *   - QComboBox::drop-down and the spin-box buttons are deliberately NOT
+ *     styled; overriding those sub-controls deletes the native arrow glyphs.
+ *   - Styling ::indicator at all stops Fusion drawing the tick, so the
+ *     checked states supply an image AND an accent background - if the SVG
+ *     ever fails to load the control still reads unambiguously as "on".
+ *   - url() resolves against the process working directory, which is the
+ *     install root (confirmed: the log records the instance path as the
+ *     relative "MODPACKS"). The paths therefore name this folder: when it
+ *     was renamed custom -> github (2026-10-24) every tick and radio dot
+ *     vanished until they followed.
+ *   - QTreeView::branch is left native; styling it would require arrow art.
+ * ========================================================================== */
+
+
+/* ---- floating overlays: full borderColor-default, they need an edge ------ */
+
+QToolTip {
+    color: #ffffff;
+    background-color: #151b23;
+    border: 1px solid #b7bdc8;
+    padding: 3px 6px;
+}
+
+QMenu {
+    background-color: #151b23;
+    color: #ffffff;
+    border: 1px solid #b7bdc8;
+    border-radius: 0;
+    padding: 4px;
+}
+QMenu::item {
+    padding: 5px 24px 5px 24px;
+    border-radius: 0;
+}
+QMenu::item:selected  { background-color: #504f4f; color: #ffffff; }
+QMenu::item:disabled  { color: #656c76; }
+QMenu::separator      { height: 1px; background-color: #3d444d; margin: 4px 8px; }
+
+QMenuBar { background-color: #010409; color: #ffffff; border: none; }
+QMenuBar::item { padding: 4px 10px; border-radius: 0; background: transparent; }
+QMenuBar::item:selected { background-color: #212830; }
+QMenuBar::item:pressed  { background-color: #504f4f; color: #ffffff; }
+
+
+/* ---- push buttons: near-white edge, white focus ring -------------------- */
+
+QPushButton {
+    background-color: #262c36;
+    color: #ffffff;
+    border: 1px solid #b7bdc8;
+    border-radius: 0;
+    padding: 4px 12px;
+    min-height: 17px;
+}
+QPushButton:hover    { background-color: #2a313c; border-color: #f0f6fc; }
+QPushButton:pressed  { background-color: #2f3742; }
+QPushButton:checked  { background-color: #2f3742; border-color: #f0f6fc; }
+QPushButton:focus    { border-color: #ffffff; }
+QPushButton:default  { border-color: #ffffff; }
+QPushButton:disabled {
+    background-color: #151b23;
+    color: #656c76;
+    border-color: #3d444d;
+}
+
+/* Tool buttons stay borderless until hovered - GitHub's icon buttons behave
+   this way, and permanently outlining ~10 toolbar buttons would dominate. */
+QToolButton {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid transparent;
+    border-radius: 0;
+    padding: 3px;
+}
+QToolButton:hover    { background-color: #262c36; border-color: #b7bdc8; }
+QToolButton:pressed  { background-color: #2f3742; border-color: #f0f6fc; }
+QToolButton:checked  { background-color: #2a313c; border-color: #b7bdc8; }
+QToolButton:disabled { color: #656c76; }
+
+/* MenuButtonPopup split part (Launch, Export, Check for Updates). Left to
+   Fusion it is a separate small ROUNDED button with its own frame at the
+   button's edge; styled, it is a flat square slice of the tool button, and
+   Qt still draws the native arrow inside it. */
+QToolButton[popupMode="1"] { padding-right: 16px; }
+/* Origin padding: Qt otherwise measures the split part from the border box, so
+   its hover/pressed fill paints over the button's own edge. */
+QToolButton::menu-button {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    background: transparent;
+    border: none;
+    width: 16px;
+}
+QToolButton::menu-button:hover { background-color: #2a313c; }
+
+/* The instance window's Launch is a QToolButton (it needs MenuButtonPopup) in
+   a row of QPushButtons, so the borderless rule above left it transparent.
+   InstanceWindow.cpp:88 gives it no objectName, but PageContainer::addButtons
+   re-parents it, which makes it the only tool button directly inside a
+   PageContainer: it takes the push-button look. Pseudo-state rules repeat
+   the parent so they outrank QToolButton:hover and friends. */
+PageContainer > QToolButton {
+    background-color: #262c36;
+    border: 1px solid #b7bdc8;
+    padding: 4px 16px 4px 12px;
+}
+PageContainer > QToolButton:hover    { background-color: #2a313c; border-color: #f0f6fc; }
+PageContainer > QToolButton:pressed  { background-color: #2f3742; border-color: #f0f6fc; }
+PageContainer > QToolButton:disabled { background-color: #151b23; border-color: #3d444d; color: #656c76; }
+/* Without a ::menu-button rule Qt draws the split arrow natively, outside the
+   box above; styled, it sits in the right padding behind a dim divider. */
+PageContainer > QToolButton::menu-button {
+    border: none;
+    border-left: 1px solid #3d444d;
+    width: 16px;
+}
+PageContainer > QToolButton::menu-button:hover { background-color: #2f3742; }
+
+
+/* ---- text entry: near-white edge ---------------------------------------- */
+
+QLineEdit, QAbstractSpinBox {
+    background-color: #262c36;
+    color: #ffffff;
+    border: 1px solid #b7bdc8;
+    border-radius: 0;
+    padding: 3px 6px;
+    selection-background-color: #504f4f;
+    selection-color: #ffffff;
+}
+QLineEdit:focus, QAbstractSpinBox:focus { border-color: #ffffff; }
+QLineEdit:disabled, QAbstractSpinBox:disabled {
+    background-color: #151b23;
+    color: #656c76;
+    border-color: #3d444d;
+}
+QLineEdit:read-only { background-color: #151b23; border-color: #3d444d; }
+
+/* Multi-line areas are content surfaces, so they take the canvas rather than
+   the control fill. This also keeps the instance console flush with the
+   per-line "MessageHighlight": #010409 backgrounds set in theme.json. */
+QTextEdit, QPlainTextEdit, QTextBrowser {
+    background-color: #010409;
+    color: #ffffff;
+    border: 1px solid #b7bdc8;
+    border-radius: 0;
+    selection-background-color: #504f4f;
+    selection-color: #ffffff;
+}
+QTextEdit:focus, QPlainTextEdit:focus { border-color: #ffffff; }
+/* read-only means a log / news pane rather than an input: drop to a dim edge */
+QTextEdit[readOnly="true"], QPlainTextEdit[readOnly="true"], QTextBrowser {
+    border-color: #3d444d;
+}
+
+
+/* ---- combo boxes --------------------------------------------------------- */
+/* ::drop-down and ::down-arrow are intentionally left native. */
+
+QComboBox {
+    background-color: #262c36;
+    color: #ffffff;
+    border: 1px solid #b7bdc8;
+    border-radius: 0;
+    padding: 3px 6px;
+    min-height: 17px;
+}
+QComboBox:hover        { background-color: #2a313c; border-color: #f0f6fc; }
+QComboBox:focus        { border-color: #ffffff; }
+QComboBox:on           { border-color: #ffffff; }
+QComboBox:disabled     { background-color: #151b23; color: #656c76; border-color: #3d444d; }
+QComboBox QAbstractItemView {
+    background-color: #151b23;
+    color: #ffffff;
+    border: 1px solid #b7bdc8;
+    border-radius: 0;
+    padding: 2px;
+    outline: none;
+    selection-background-color: #504f4f;
+    selection-color: #ffffff;
+}
+
+
+/* ---- check boxes and radio buttons -------------------------------------- */
+/* The accent is a fill only. The near-white outline is kept in BOTH states,
+   so checking a box never dims its edge. */
+
+QCheckBox, QRadioButton { color: #ffffff; spacing: 6px; }
+QCheckBox:disabled, QRadioButton:disabled { color: #656c76; }
+
+QCheckBox::indicator, QRadioButton::indicator {
+    width: 12px;
+    height: 12px;
+    background-color: #010409;
+    border: 1px solid #b7bdc8;
+}
+QCheckBox::indicator    { border-radius: 0; }
+QRadioButton::indicator { border-radius: 7px; }
+
+QCheckBox::indicator:hover, QRadioButton::indicator:hover {
+    background-color: #262c36;
+    border-color: #f0f6fc;
+}
+QCheckBox::indicator:checked {
+    background-color: #504f4f;
+    border-color: #b7bdc8;
+    image: url(themes/github/resources/check.svg);
+}
+QCheckBox::indicator:indeterminate {
+    background-color: #504f4f;
+    border-color: #b7bdc8;
+    image: url(themes/github/resources/check-partial.svg);
+}
+QRadioButton::indicator:checked {
+    background-color: #504f4f;
+    border-color: #b7bdc8;
+    image: url(themes/github/resources/radio-dot.svg);
+}
+QCheckBox::indicator:disabled, QRadioButton::indicator:disabled {
+    background-color: #151b23;
+    border-color: #3d444d;
+}
+/* #3d444d, not #656c76: the disabled fill must stay DARKER than the #504f4f
+   enabled fill, or a disabled control looks more prominent than a live one. */
+QCheckBox::indicator:checked:disabled, QRadioButton::indicator:checked:disabled {
+    background-color: #3d444d;
+    border-color: #3d444d;
+}
+
+
+/* ---- item views: dim frame, dim gridlines ------------------------------- */
+
+QAbstractItemView {
+    background-color: #010409;
+    alternate-background-color: #151b23;
+    color: #ffffff;
+    border: 1px solid #3d444d;
+    border-radius: 0;
+    gridline-color: #3d444d;
+    outline: none;
+    selection-background-color: #504f4f;
+    selection-color: #ffffff;
+}
+QAbstractItemView::item          { padding: 3px; border: none; }
+QAbstractItemView::item:hover    { background-color: #212830; color: #ffffff; }
+QAbstractItemView::item:selected { background-color: #504f4f; color: #ffffff; }
+/* keep the selection legible when the view loses focus */
+QAbstractItemView::item:selected:!active { background-color: #504f4f; color: #ffffff; }
+
+/* The instance grid is the central surface. It is custom-painted
+   (InstanceView/InstanceDelegate), so its selection colours come from the
+   palette, not from the rules above, and its frame comes from the
+   QAbstractItemView rule - that dim box is what separates the grid from
+   instanceToolBar, so it stays. Its LEFT side is the window's left edge,
+   and only that side is recoloured, in the window-frame section below.
+   TRAP: the widget's objectName is NOT "instanceView". An ID selector
+   never matched it - a `#instanceView { border: none }` rule sat here
+   unnoticed and dead. Select this widget by CLASS name; Qt resolves a
+   type selector through the metaobject, so it cannot silently miss. */
+
+QHeaderView { background-color: #151b23; border: none; }
+QHeaderView::section {
+    background-color: #151b23;
+    color: #b7bdc8;
+    padding: 4px 6px;
+    border: none;
+    border-bottom: 1px solid #b7bdc8;   /* bottom rule only, not a full box */
+    border-right: 1px solid #3d444d;
+}
+QHeaderView::section:hover { background-color: #212830; color: #ffffff; }
+QTableView QTableCornerButton::section {
+    background-color: #151b23;
+    border: none;
+    border-bottom: 1px solid #b7bdc8;
+}
+
+
+/* ---- tabs ---------------------------------------------------------------- */
+
+QTabWidget::pane {
+    background-color: #010409;
+    border: 1px solid #3d444d;
+    border-radius: 0;
+    top: -1px;
+}
+QTabBar::tab {
+    background-color: #151b23;
+    color: #b7bdc8;
+    border: 1px solid #3d444d;
+    border-bottom: none;
+    border-radius: 0;
+    padding: 5px 12px;
+    margin-right: 2px;
+}
+QTabBar::tab:hover    { background-color: #212830; color: #ffffff; }
+QTabBar::tab:selected {
+    background-color: #010409;
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+QTabBar::tab:disabled { color: #656c76; }
+
+
+/* ---- chrome -------------------------------------------------------------- */
+/* Separation here comes from the fill step #010409 -> #151b23, which works
+   regardless of whether a toolbar is docked horizontally or vertically. */
+
+QToolBar {
+    background-color: #151b23;
+    border: none;
+    padding: 2px;
+    spacing: 2px;
+}
+QToolBar::separator { background-color: #3d444d; width: 1px; height: 1px; margin: 4px; }
+
+QStatusBar { background-color: #151b23; color: #b7bdc8; border-top: 1px solid #3d444d; }
+QStatusBar::item { border: none; }
+
+QGroupBox {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #3d444d;
+    border-radius: 0;
+    margin-top: 9px;
+    padding-top: 7px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 8px;
+    padding: 0 4px;
+    color: #b7bdc8;
+}
+
+/* Invisible at rest, dim on hover - a permanent bar between panes is heavier
+   than anything GitHub draws. */
+QSplitter::handle        { background-color: #010409; }
+QSplitter::handle:hover  { background-color: #3d444d; }
+
+/* QFrame HLine (4) / VLine (5) separators */
+QFrame[frameShape="4"] { background-color: #3d444d; border: none; max-height: 1px; }
+QFrame[frameShape="5"] { background-color: #3d444d; border: none; max-width: 1px; }
+
+
+/* ---- window frame -------------------------------------------------------- */
+/* 7zDark.ini draws its 1px edge with DwmSetWindowAttribute(DWMWA_BORDER_COLOR,
+   B7BDC8) - the NON-CLIENT frame, title bar included. QSS cannot reach that,
+   and Qt supports no box model on QMainWindow, QDialog, QWidget or QStatusBar
+   (background only), so the window cannot draw its own edge. It is assembled
+   from the widgets that own each edge instead; ToolbarsLocked=true in
+   prismlauncher.cfg is what keeps that ownership fixed:
+
+       top     mainToolBar
+       left    mainToolBar / InstanceView / newsToolBar / statusBar
+       right   mainToolBar / instanceToolBar / newsToolBar / statusBar
+       bottom  statusBar
+
+   Every selector is an ID, and every one of those names occurs exactly once in
+   prismlauncher.exe, so no other window can pick these rules up. Keep the block
+   AFTER the QToolBar, QStatusBar and QAbstractItemView rules above: it
+   refines them, and InstanceView beats QAbstractItemView only by document
+   order - both are type selectors, so they carry the same specificity.
+
+   Accepted limits: the native title bar keeps the system frame, so the outline
+   starts below it; maximised, the outline sits on the screen edge where 7-Zip
+   shows none; unlocking and re-docking a toolbar breaks the edge it carried;
+   hiding instanceToolBar leaves the middle row's right edge undrawn; with
+   MenuBarInsteadOfToolBar=true the top edge moves to QMenuBar, unstyled here;
+   other windows (settings, instance console) keep the system border. */
+
+QToolBar#mainToolBar {
+    border-top:   1px solid #b7bdc8;
+    border-left:  1px solid #b7bdc8;
+    border-right: 1px solid #b7bdc8;
+}
+QToolBar#instanceToolBar { border-right: 1px solid #b7bdc8; }
+QToolBar#newsToolBar {
+    border-left:  1px solid #b7bdc8;
+    border-right: 1px solid #b7bdc8;
+}
+QStatusBar#statusBar {
+    border-left:   1px solid #b7bdc8;
+    border-right:  1px solid #b7bdc8;
+    border-bottom: 1px solid #b7bdc8;
+}
+/* The grid's left side is the window's left edge. */
+InstanceView { border-left: 1px solid #b7bdc8; }
+
+
+/* ---- scroll bars: no arrows, GitHub style ------------------------------- */
+
+QScrollBar:vertical   { background: #010409; width: 12px; margin: 0; border: none; }
+QScrollBar:horizontal { background: #010409; height: 12px; margin: 0; border: none; }
+QScrollBar::handle:vertical {
+    background: #3d444d;
+    border-radius: 0;
+    margin: 2px;
+    min-height: 28px;
+}
+QScrollBar::handle:horizontal {
+    background: #3d444d;
+    border-radius: 0;
+    margin: 2px;
+    min-width: 28px;
+}
+QScrollBar::handle:hover { background: #656c76; }
+QScrollBar::add-line, QScrollBar::sub-line { height: 0; width: 0; border: none; background: none; }
+QScrollBar::add-page, QScrollBar::sub-page { background: none; }
+
+
+/* ---- progress ------------------------------------------------------------ */
+/* The centred label crosses both trough and chunk. White reads 8.2:1 on the
+   #504f4f chunk and 17:1 on the #151b23 trough, so a single label colour now
+   works across the whole bar - the old #194fb1 special case is retired. */
+
+QProgressBar {
+    background-color: #151b23;
+    color: #ffffff;
+    border: 1px solid #3d444d;
+    border-radius: 0;
+    text-align: center;
+    min-height: 15px;
+}
+QProgressBar::chunk { background-color: #504f4f; border-radius: 0; margin: 1px; }
+
+
+/* ---- sliders ------------------------------------------------------------- */
+/* The filled portion is an edge-like cue, so it takes #ffffff, not the accent:
+   #504f4f against the #262c36 groove would be 1.7:1 and read as unfilled. */
+
+QSlider::groove:horizontal   { background: #262c36; height: 4px; border-radius: 0; }
+QSlider::sub-page:horizontal { background: #ffffff; border-radius: 0; }
+QSlider::groove:vertical     { background: #262c36; width: 4px; border-radius: 0; }
+QSlider::add-page:vertical   { background: #ffffff; border-radius: 0; }
+QSlider::handle:horizontal {
+    background: #ffffff;
+    border: 1px solid #b7bdc8;
+    width: 12px;
+    margin: -5px 0;
+    border-radius: 0;
+}
+QSlider::handle:vertical {
+    background: #ffffff;
+    border: 1px solid #b7bdc8;
+    height: 12px;
+    margin: 0 -5px;
+    border-radius: 0;
+}
+QSlider::handle:hover { border-color: #f0f6fc; }

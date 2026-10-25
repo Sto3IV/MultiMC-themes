@@ -1,0 +1,31 @@
+{
+    "colors": {
+        "AlternateBase": "#21202E",
+        "Base": "#191724",
+        "BrightText": "#E0DEF4",
+        "Button": "#26233A",
+        "ButtonText": "#E0DEF4",
+        "Highlight": "#403D52",
+        "HighlightedText": "#E0DEF4",
+        "Link": "#C4A7E7",
+        "Text": "#E0DEF4",
+        "ToolTipBase": "#1F1D2E",
+        "ToolTipText": "#E0DEF4",
+        "Window": "#191724",
+        "WindowText": "#E0DEF4",
+        "fadeAmount": 0.5,
+        "fadeColor": "#191724"
+    },
+    "logColors": {
+        "Debug": "#C4A7E7",
+        "Error": "#EB6F92",
+        "Fatal": "#191724",
+        "FatalHighlight": "#EB6F92",
+        "Launcher": "#9CCFD8",
+        "Message": "#E0DEF4",
+        "Warning": "#F6C177"
+    },
+    "name": "Rosé Pine",
+    "qssFilePath": "themeStyle.css",
+    "widgets": "Fusion"
+}
