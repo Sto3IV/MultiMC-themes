@@ -1,0 +1,11 @@
+[Icon Theme]
+Name=Flat (Rosé Pine)
+Comment=Prism Launcher 11.1.1 flat_white icons recoloured to Rosé Pine text (#E0DEF4)
+Inherits=multimc
+Directories=scalable
+
+[scalable]
+Size=48
+Type=Scalable
+MinSize=16
+MaxSize=256
