@@ -25,9 +25,8 @@ A curated collection of minimalist, aesthetic, and high-contrast dark themes met
   - [Method 2: Manual Download (.zip)](#method-2-manual-download-zip)
   - [Activating the Theme in Launcher](#activating-the-theme-in-launcher)
   - [Platform Paths (Where is my `themes` folder?)](#platform-paths)
-- [🇷🇺 Инструкция по установке (Русский)](#-инструкция-по-установке-русский)
 - [⚙️ Technical Notes & Structure](#️-technical-notes--structure)
-- [📜 License](#-license)
+- [📜 License & Credits](#-license--credits)
 
 ---
 
@@ -110,10 +109,10 @@ git clone https://github.com/Sto3IV/MultiMC-themes.git
 
 ### Activating the Theme in Launcher
 
-1. Launch **Prism Launcher** / **MultiMC**.
-2. Navigate to **Settings** (Настройки) ➔ **User Interface** (Интерфейс пользователя).
-3. Under the **Colors** / **Theme** (Цвета / Тема) dropdown:
-   - Select your desired theme (e.g., `Nord`, `Rosé Pine`, `Kanagawa Wave`, `GitHub Dark High Contrast`, or `Catppuccin Mocha`).
+1. Launch **Prism Launcher** or **MultiMC**.
+2. Navigate to **Settings** ➔ **User Interface**.
+3. Under the **Colors** or **Theme** dropdown:
+   - Select your desired theme (`Nord`, `Rosé Pine`, `Kanagawa Wave`, `GitHub Dark High Contrast`, or `Catppuccin Mocha`).
 4. Ensure the **Widget style** is set to **Fusion** for optimal appearance.
 5. Click **Close** — the stylesheet applies immediately (a launcher restart is recommended for complete icon caching).
 
@@ -121,7 +120,7 @@ git clone https://github.com/Sto3IV/MultiMC-themes.git
 
 ### Platform Paths
 
-Locate your launcher's `themes` directory based on your environment:
+Locate your launcher's `themes` directory based on your operating system:
 
 #### 🪟 Windows
 - **Prism Launcher (Standard AppData):**  
@@ -146,44 +145,6 @@ Locate your launcher's `themes` directory based on your environment:
 > [!TIP]
 > **Universal Shortcut inside the Launcher:**  
 > In Prism Launcher, you can go to **Settings** ➔ **User Interface** and click **Folder** (or open the launcher instance/data directory directly) to reveal the root where the `themes` directory lives.
-
----
-
-## 🇷🇺 Инструкция по установке (Русский)
-
-<details>
-<summary><b>Нажмите, чтобы развернуть подробное руководство на русском</b></summary>
-
-### Шаг 1. Получение файлов
-- Скачайте архив репозитория: [Скачать ZIP](https://github.com/Sto3IV/MultiMC-themes/archive/refs/heads/main.zip).
-- Распакуйте архив на свой компьютер. Внутри находится папка `themes`.
-
-### Шаг 2. Размещение в лаунчере
-Скопируйте папки нужных тем из `themes/` в системную директорию тем вашего лаунчера:
-
-* **Windows:**  
-  Нажмите `Win + R`, введите `%APPDATA%\PrismLauncher\themes` и нажмите `Enter`.  
-  *(Если у вас портативная версия MultiMC или Prism — перейдите в папку с программой и откройте папку `themes`)*
-* **Linux (Flatpak / Steam Deck):**  
-  `~/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/themes/`
-* **Linux (Обычная установка):**  
-  `~/.local/share/PrismLauncher/themes/`
-* **macOS:**  
-  `~/Library/Application Support/PrismLauncher/themes/`
-
-### Шаг 3. Активация
-1. Откройте **Prism Launcher** (или **MultiMC**).
-2. Зайдите в **Настройки** ➔ вкладка **Интерфейс пользователя** (User Interface).
-3. В выпадающем меню **Цвета** (Colors) или **Тема** выберите добавленную тему:
-   - `Nord`
-   - `Rosé Pine`
-   - `Kanagawa Wave`
-   - `GitHub Dark High Contrast`
-   - `Catppuccin Mocha`
-4. Убедитесь, что в поле **Стиль виджетов** (Widgets) выбран `Fusion`.
-5. Нажмите **Закрыть**. Тема применится сразу.
-
-</details>
 
 ---
 
@@ -226,16 +187,16 @@ MultiMC-themes/
 ```
 
 > [!IMPORTANT]
-> **Сохранение структуры путей (Relative URL Resolution):**  
-> Стили Qt (`themeStyle.css`) разрешают векторные ресурсы (чекбоксы, стрелки, радиокнопки) по относительному пути `themes/<имя_папки>/resources/...`.  
-> Не переименовывайте папки тем внутри вашей директории `themes/` (`kanagawa-wave`, `nord`, `rose-pine`, `github`, `catpuccin`), иначе векторные иконки в интерфейсе не загрузятся.
+> **Preserving Folder Names (Relative URL Resolution):**  
+> Qt stylesheets (`themeStyle.css`) resolve vector resources (checkboxes, arrows, radio buttons) using the relative path `themes/<folder_name>/resources/...`.  
+> Do not rename the theme folders inside your `themes/` directory (`kanagawa-wave`, `nord`, `rose-pine`, `github`, `catpuccin`), otherwise the custom UI vector icons will fail to load.
 
 ---
 
-## 📜 License
+## 📜 License & Credits
 
-Данный репозиторий распространяется под лицензией [Apache License 2.0](LICENSE).  
-Отдельные цветовые палитры и исходные мотивы принадлежат их уважаемым сообществам и создателям:
+This repository is distributed under the [Apache License 2.0](LICENSE).  
+Individual color palettes and aesthetic motifs belong to their respective creators and open-source communities:
 - **Nord:** [Arctic Ice Studio](https://www.nordtheme.com/)
 - **Rosé Pine:** [Rosé Pine Team](https://rosepinetheme.com/)
 - **Kanagawa:** [rebelot / Kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)
