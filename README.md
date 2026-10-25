@@ -1,15 +1,9 @@
 # MultiMC & Prism Launcher Themes & Icon Themes
 
 > *«Even in cold geometry, order breeds grace. Form and function aligned beneath a calm, lunar gaze.»*  
-> — *Ranni, The Architect*
+> — *The Architect*
 
 A curated collection of minimalist, aesthetic, and high-contrast dark themes and matching vector icon themes meticulously calibrated for **Prism Launcher**, **MultiMC**, and compatible Qt-based Minecraft launchers.
-
-[![Launchers](https://img.shields.io/badge/Launchers-MultiMC%20%7C%20Prism%20%7C%20PolyMC-blue?style=for-the-badge&logo=minecraft)](https://prismlauncher.org/)
-[![Engine](https://img.shields.io/badge/Engine-Qt5%20%2F%20Qt6%20Fusion-informational?style=for-the-badge&logo=qt)](https://www.qt.io/)
-[![Themes](https://img.shields.io/badge/Themes-5%20Color%20Themes-purple?style=for-the-badge)](#-gallery--showcase)
-[![Icon Themes](https://img.shields.io/badge/Icon%20Themes-3%20Vector%20Packs-teal?style=for-the-badge)](#-icon-themes)
-[![License](https://img.shields.io/badge/License-Apache--2.0-green?style=for-the-badge)](LICENSE)
 
 ---
 
