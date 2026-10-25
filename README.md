@@ -40,7 +40,7 @@ A curated collection of minimalist, aesthetic, and high-contrast dark themes and
 
 | Preview | Specifications |
 | :--- | :--- |
-| ![Nord Preview](https://raw.githubusercontent.com/Sto3IV/MultiMC-themes/assets/screenshots/nord.png) | **Theme:** `Nord`<br>**Icon Pack:** `Flat (Nord)`<br>**Widget Style:** `Fusion`<br>**Base:** `#2E3440`<br>**Alternate Base:** `#353B49`<br>**Button / Surface:** `#434C5E`<br>**Accent / Frost:** `#88C0D0`<br>**Text / Snow:** `#D8DEE9` / `#ECEFF4` |
+| ![Nord Preview](https://raw.githubusercontent.com/Sto3IV/MultiMC-themes/assets/screenshots/nord.png) | **Theme:** `Nord`<br>**Icon Pack:** `Flat (Nord)`<br>**Base:** `#2E3440`<br>**Alternate Base:** `#353B49`<br>**Button / Surface:** `#434C5E`<br>**Accent / Frost:** `#88C0D0`<br>**Text / Snow:** `#D8DEE9` / `#ECEFF4` |
 
 ---
 
@@ -49,7 +49,7 @@ A curated collection of minimalist, aesthetic, and high-contrast dark themes and
 
 | Preview | Specifications |
 | :--- | :--- |
-| ![Rosé Pine Preview](https://raw.githubusercontent.com/Sto3IV/MultiMC-themes/assets/screenshots/rose.png) | **Theme:** `Rosé Pine`<br>**Icon Pack:** `Flat (Rosé Pine)`<br>**Widget Style:** `Fusion`<br>**Base:** `#191724`<br>**Alternate Base:** `#21202E`<br>**Button / Surface:** `#26233A`<br>**Highlight / Pine:** `#403D52`<br>**Link / Iris:** `#C4A7E7`<br>**Text:** `#E0DEF4` |
+| ![Rosé Pine Preview](https://raw.githubusercontent.com/Sto3IV/MultiMC-themes/assets/screenshots/rose.png) | **Theme:** `Rosé Pine`<br>**Icon Pack:** `Flat (Rosé Pine)`<br>**Base:** `#191724`<br>**Alternate Base:** `#21202E`<br>**Button / Surface:** `#26233A`<br>**Highlight / Pine:** `#403D52`<br>**Link / Iris:** `#C4A7E7`<br>**Text:** `#E0DEF4` |
 
 ---
 
@@ -58,7 +58,7 @@ A curated collection of minimalist, aesthetic, and high-contrast dark themes and
 
 | Preview | Specifications |
 | :--- | :--- |
-| ![Kanagawa Wave Preview](https://raw.githubusercontent.com/Sto3IV/MultiMC-themes/assets/screenshots/kanagawa.png) | **Theme:** `Kanagawa Wave`<br>**Icon Pack:** `Flat (Kanagawa Wave)`<br>**Widget Style:** `Fusion`<br>**Base / Sumi Ink:** `#1F1F28`<br>**Alternate Base:** `#252530`<br>**Button / Surface:** `#363646`<br>**Highlight / Wave Blue:** `#2D4F67`<br>**Text / Fuji White:** `#DCD7BA` |
+| ![Kanagawa Wave Preview](https://raw.githubusercontent.com/Sto3IV/MultiMC-themes/assets/screenshots/kanagawa.png) | **Theme:** `Kanagawa Wave`<br>**Icon Pack:** `Flat (Kanagawa Wave)`<br>**Base / Sumi Ink:** `#1F1F28`<br>**Alternate Base:** `#252530`<br>**Button / Surface:** `#363646`<br>**Highlight / Wave Blue:** `#2D4F67`<br>**Text / Fuji White:** `#DCD7BA` |
 
 ---
 
@@ -67,7 +67,7 @@ A curated collection of minimalist, aesthetic, and high-contrast dark themes and
 
 | Preview | Specifications |
 | :--- | :--- |
-| ![GitHub Dark High Contrast Preview](https://raw.githubusercontent.com/Sto3IV/MultiMC-themes/assets/screenshots/github.png) | **Theme:** `GitHub Dark High Contrast`<br>**Widget Style:** `Fusion`<br>**Base:** `#010409`<br>**Alternate Base:** `#151b23`<br>**Button / Surface:** `#262c36`<br>**Highlight:** `#504f4f`<br>**Text / Bright:** `#ffffff` / `#ff9492` |
+| ![GitHub Dark High Contrast Preview](https://raw.githubusercontent.com/Sto3IV/MultiMC-themes/assets/screenshots/github.png) | **Theme:** `GitHub Dark High Contrast`<br>**Base:** `#010409`<br>**Alternate Base:** `#151b23`<br>**Button / Surface:** `#262c36`<br>**Highlight:** `#504f4f`<br>**Text / Bright:** `#ffffff` / `#ff9492` |
 
 ---
 
@@ -76,7 +76,7 @@ A curated collection of minimalist, aesthetic, and high-contrast dark themes and
 
 | Preview | Specifications |
 | :--- | :--- |
-| ![Catppuccin Mocha Preview](https://raw.githubusercontent.com/Sto3IV/MultiMC-themes/assets/screenshots/catpuccin.png) | **Theme:** `Catppuccin Mocha`<br>**Widget Style:** `Fusion`<br>**Base / Crust:** `#181825`<br>**Alternate Base / Mantle:** `#1e1e2e`<br>**Button / Surface:** `#313244`<br>**Highlight / Pink:** `#f5c2e7`<br>**Link / Lavender:** `#b4befe`<br>**Text:** `#cdd6f4` |
+| ![Catppuccin Mocha Preview](https://raw.githubusercontent.com/Sto3IV/MultiMC-themes/assets/screenshots/catpuccin.png) | **Theme:** `Catppuccin Mocha`<br>**Base / Crust:** `#181825`<br>**Alternate Base / Mantle:** `#1e1e2e`<br>**Button / Surface:** `#313244`<br>**Highlight / Pink:** `#f5c2e7`<br>**Link / Lavender:** `#b4befe`<br>**Text:** `#cdd6f4` |
 
 ---
 
@@ -92,9 +92,7 @@ These icon packs live in the `iconthemes/` directory and replace the default lau
 
 ---
 
-## 📦 Quick & Simple Installation
-
-No technical complexity required. Follow these three simple steps:
+## 📦 Installation
 
 ### Step 1: Open your Prism Launcher root folder
 
@@ -157,10 +155,7 @@ If you do **not** have Git installed:
 
 1. Open **Prism Launcher** or **MultiMC**.
 2. Navigate to **Settings** ➔ **User Interface**.
-3. **Theme:** Under **Colors** or **Theme**, pick your theme (`Nord`, `Rosé Pine`, `Kanagawa Wave`, `GitHub Dark High Contrast`, or `Catppuccin Mocha`).
-4. **Icons:** Under **Icons**, pick your matching icon pack (`Flat (Nord)`, `Flat (Rosé Pine)`, or `Flat (Kanagawa Wave)`).
-5. **Widget style:** Ensure **Widget style** is set to **Fusion** for proper rendering.
-6. Click **Close** — the theme and icons apply immediately.
+3. Pick theme and icons set.
 
 ---
 
